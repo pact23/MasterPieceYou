@@ -5,11 +5,16 @@ import android.graphics.PointF;
 import android.media.FaceDetector;
 import android.util.Log;
 
+/**********Cette classe nous fournie les informations nécessaires***********/
+/**********Lors de la détection de un visage sur une photo******************/
+
 public class FaceDetection {
 
 	private Bitmap mFaceBitmap; 
 	private int mFaceWidth = 0;
 	private int mFaceHeight = 0;
+	
+	//On spécifie qu'on veut au plus un visage !!
 	private int MAX_FACES = 1;
 	private int numberFaces = 0;
 	
@@ -27,8 +32,7 @@ public class FaceDetection {
 		 mFaceWidth = mFaceBitmap.getWidth();
 		 mFaceHeight = mFaceBitmap.getHeight();
 
-		// perform face detection and set the feature points setFace()
-		
+		//On effectue la detection de visage sur la photo		
 		 FaceDetector fd;
 		 FaceDetector.Face [] faces = new FaceDetector.Face[MAX_FACES];
 		 PointF midpoint = new PointF();
@@ -39,18 +43,21 @@ public class FaceDetection {
 		 } catch (Exception e) {
 		 }
 		 
+		 //Si on a détecté un visage...
 		 if(numberFaces > 0)  {
 			 try {
 				 faces[0].getMidPoint(midpoint);
+				 //Les coordonées du centre des yeux
 				 eyeCenterX = midpoint.x;
 				 eyeCenterY = midpoint.y;
+				 
+				 //Et la distance séparant les deux yeux
 				 eyeDistance = faces[0].eyesDistance();
+				 
+				 //Voilà un indice de confiance...
 				 confidence = faces[0].confidence();
-				 Log.e("POSE","X:"+faces[0].pose(FaceDetector.Face.EULER_X));
-				 Log.e("POSE","Y:"+faces[0].pose(FaceDetector.Face.EULER_Y));
-				 Log.e("POSE","Z:"+faces[0].pose(FaceDetector.Face.EULER_Z));
 			 } catch (Exception e) {
-				 Log.e("FaceDetection", "setFace(): face : " + e.toString());
+				 Log.e("FaceDetection", e.toString());
 			 }
 		 }
 	}

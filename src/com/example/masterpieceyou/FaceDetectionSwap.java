@@ -5,11 +5,16 @@ import android.graphics.PointF;
 import android.media.FaceDetector;
 import android.util.Log;
 
+/**********Cette classe nous fournie les informations nécessaires***********/
+/**********Lors de la détection de plusieurs visage sur une photo******************/
+
 public class FaceDetectionSwap {
 
 	private Bitmap mFaceBitmap; 
 	private int mFaceWidth = 0;
 	private int mFaceHeight = 0;
+	
+	//On spécifie qu'on veut au plus visages !!
 	private int MAX_FACES = 10;
 	private int numberFaces = 0;
 	
@@ -27,8 +32,7 @@ public class FaceDetectionSwap {
 		 mFaceWidth = mFaceBitmap.getWidth();
 		 mFaceHeight = mFaceBitmap.getHeight();
 
-		// perform face detection and set the feature points setFace()
-		
+		//On effectue la detection de visages sur la photo	
 		 FaceDetector fd;
 		 FaceDetector.Face [] faces = new FaceDetector.Face[MAX_FACES];
 		 PointF midpoint = new PointF();
@@ -39,6 +43,7 @@ public class FaceDetectionSwap {
 		 } catch (Exception e) {
 		 }
 		 
+		 //S'il y a plus de deux visages
 		 if(numberFaces > 1)  {
 			 try {
 				 eyeCenterX = new double[numberFaces];
@@ -48,13 +53,19 @@ public class FaceDetectionSwap {
 				 
 				 for(int i=0;i<numberFaces;i++) {
 					 faces[i].getMidPoint(midpoint);
+
+					 //Les coordonées du centre des yeux
 					 eyeCenterX[i] = midpoint.x;
 					 eyeCenterY[i] = midpoint.y;
+					 
+					 //Et la distance séparant les deux yeux
 					 eyeDistance[i] = faces[0].eyesDistance();
+					 
+					 //Voilà un indice de confiance...
 					 confidence[i] = faces[0].confidence();
 				 }
 			 } catch (Exception e) {
-				 Log.e("FaceDetection", "setFace(): face : " + e.toString());
+				 Log.e("FaceDetection", e.toString());
 			 }
 		 }
 	}

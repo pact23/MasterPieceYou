@@ -15,6 +15,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+/****Cette classe nous sert à afficher touts les résultats enregistrés******/
 public class ImageAdapter extends BaseAdapter {
     private static final int REQUIRED_SIZE = 200;
 	private Context mContext;
@@ -65,7 +66,7 @@ public class ImageAdapter extends BaseAdapter {
         return imageView;
     }
     
-    /*****Load a File************/
+    /*****Charge un File avec un taille réduite (par soucis de mémoire)************/
     private Bitmap decodeFile(File f){
 	    try {
 	        //Decode image size

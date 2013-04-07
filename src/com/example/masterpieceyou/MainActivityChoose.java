@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
+/***** C'est la première class affichée, lors du démarrage de l'application******/
 public class MainActivityChoose extends Activity {
 
 	@Override
@@ -18,6 +19,7 @@ public class MainActivityChoose extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_activity_choose);
 		
+		//Voilà le message affiché lors du lancement de l'application
 		new AlertDialog.Builder(this)
 	    .setTitle("How to")
 	    .setMessage("Stand in front of the camera with your head straight and face clear of hair or glasses. \n\nTake the picture, and swap faces!")
@@ -82,12 +84,5 @@ public class MainActivityChoose extends Activity {
             }
         });
 	}
-	
-	/*@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_main_activity_choose, menu);
-		return true;
-	}*/
 
 }

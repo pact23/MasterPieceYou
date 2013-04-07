@@ -2,11 +2,16 @@ package com.example.masterpieceyou;
 
 import android.graphics.Bitmap;
 
+/*******Classe crée afin de faciliter la transition entre le code sous Eclipse/Java PC*********/
+/*******et l'application Android (où la classe BufferedImage est remplacée par Bitmap**********/
+
 public class BufferedImage {
 	private final Bitmap bitmap;
 	
 	public BufferedImage(Bitmap bitmap) {
 		this.bitmap = bitmap.copy(bitmap.getConfig(), true);
+		
+		//Ceci afin de gérer le transparence dans l'image
 		this.bitmap.setHasAlpha(true);
 	}
 	
@@ -31,7 +36,6 @@ public class BufferedImage {
 	}
 
 	public void setRGB(int i, int j, int newRGB) {
-		// TODO Auto-generated method stub
 		bitmap.setPixel(i, j, newRGB);
 	}
 	
