@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridview2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true">
+ 
+  <ImageView
+      android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center" />
+
+    <RelativeLayout
+      android:id="@+id/linearLayout2"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentRight="true"
+      android:layout_marginBottom="0dp"
+      android:layout_marginLeft="0dp"
+      android:layout_marginRight="0dp"
+      android:background="@color/dark_grey"
+      android:orientation="horizontal" >
+      
+        <ImageButton
+          android:id="@+id/buttoncancel2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignBaseline="@+id/button1"
+          android:layout_centerInParent="true"
+          android:onClick="cancelPic2"
+          android:background="?android:attr/selectableItemBackground"
+          android:src="@drawable/cancel" />
+
+      <ImageButton
+          android:id="@+id/button2folder"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_alignTop="@+id/buttoncancel2"
+          android:background="?android:attr/selectableItemBackground"
+          android:onClick="chooseFile2"
+          android:layout_marginRight="20dp"
+          android:src="@drawable/folder" />
+
+      <ImageButton
+          android:id="@+id/button2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_alignTop="@+id/buttoncancel2"
+          android:layout_marginLeft="20dp"
+          android:background="?android:attr/selectableItemBackground"
+          android:onClick="takePic2"
+          android:src="@drawable/deviceaccesscamera" />
+      
+  </RelativeLayout>
+  
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ligth_grey">#DDDDDD</color>
+    <color name="dark_grey">#222222</color>
+    <color name="black_overlay">#66000000</color>
+
+</resources>

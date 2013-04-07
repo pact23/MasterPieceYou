@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true">
+    
+  <ImageView
+      android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout3"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center" />
+
+    <RelativeLayout 
+        android:id="@+id/linearLayout3"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_alignParentBottom="true"
+      android:layout_alignParentRight="true"
+      android:layout_marginBottom="0dp"
+      android:layout_marginLeft="0dp"
+      android:layout_marginRight="0dp"
+      android:background="@color/dark_grey"
+      android:orientation="horizontal" >
+
+      <ImageButton
+          android:id="@+id/button3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:onClick="doTheJob"
+          android:background="?android:attr/selectableItemBackground"
+          android:src="@drawable/navigationaccept" />
+
+      <ImageButton
+          android:id="@+id/buttonsave"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_alignTop="@+id/button3"
+          android:layout_marginLeft="20dp"
+          android:background="?android:attr/selectableItemBackground"
+          android:onClick="saveFinalPhoto"
+          android:src="@drawable/contentsave" />
+
+      <ImageButton
+          android:id="@+id/buttoncancel"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_alignTop="@+id/button3"
+          android:layout_marginRight="20dp"
+          android:onClick="cancelPic3"
+          android:background="?android:attr/selectableItemBackground"
+          android:src="@drawable/cancel" />
+      
+  </RelativeLayout >
+  
+</RelativeLayout>
